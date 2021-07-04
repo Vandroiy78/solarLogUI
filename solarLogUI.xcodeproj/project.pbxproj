@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B1D170B2671E5D4006E945B /* solarLogUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D170A2671E5D4006E945B /* solarLogUIApp.swift */; };
+		8B1D170F2671E5D7006E945B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D170E2671E5D7006E945B /* Assets.xcassets */; };
+		8B1D17122671E5D7006E945B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D17112671E5D7006E945B /* Preview Assets.xcassets */; };
+		8B1D171F2671E6C5006E945B /* solarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D171E2671E6C5006E945B /* solarTabView.swift */; };
+		8B1D17212671E701006E945B /* solarStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D17202671E701006E945B /* solarStatView.swift */; };
+		8B1D17232671EAD0006E945B /* SolarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D17222671EAD0006E945B /* SolarData.swift */; };
+		8B1D17252671EB00006E945B /* SolarDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D17242671EB00006E945B /* SolarDataModel.swift */; };
+		8B1D17282671EB5E006E945B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D17272671EB5E006E945B /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8B1D17072671E5D4006E945B /* solarLogUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = solarLogUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B1D170A2671E5D4006E945B /* solarLogUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarLogUIApp.swift; sourceTree = "<group>"; };
+		8B1D170E2671E5D7006E945B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B1D17112671E5D7006E945B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B1D17132671E5D7006E945B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B1D171E2671E6C5006E945B /* solarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarTabView.swift; sourceTree = "<group>"; };
+		8B1D17202671E701006E945B /* solarStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarStatView.swift; sourceTree = "<group>"; };
+		8B1D17222671EAD0006E945B /* SolarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarData.swift; sourceTree = "<group>"; };
+		8B1D17242671EB00006E945B /* SolarDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarDataModel.swift; sourceTree = "<group>"; };
+		8B1D17272671EB5E006E945B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B1D17042671E5D4006E945B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B1D16FE2671E5D4006E945B = {
+			isa = PBXGroup;
+			children = (
+				8B1D17092671E5D4006E945B /* solarLogUI */,
+				8B1D17082671E5D4006E945B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B1D17082671E5D4006E945B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B1D17072671E5D4006E945B /* solarLogUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B1D17092671E5D4006E945B /* solarLogUI */ = {
+			isa = PBXGroup;
+			children = (
+				8B1D170A2671E5D4006E945B /* solarLogUIApp.swift */,
+				8B1D171B2671E62B006E945B /* Views */,
+				8B1D171A2671E624006E945B /* ViewModels */,
+				8B1D17192671E618006E945B /* Models */,
+				8B1D17262671EB2A006E945B /* Environment */,
+				8B1D170E2671E5D7006E945B /* Assets.xcassets */,
+				8B1D17132671E5D7006E945B /* Info.plist */,
+				8B1D17102671E5D7006E945B /* Preview Content */,
+			);
+			path = solarLogUI;
+			sourceTree = "<group>";
+		};
+		8B1D17102671E5D7006E945B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B1D17112671E5D7006E945B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B1D17192671E618006E945B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B1D17222671EAD0006E945B /* SolarData.swift */,
+				8B1D17242671EB00006E945B /* SolarDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B1D171A2671E624006E945B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8B1D171B2671E62B006E945B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B1D171E2671E6C5006E945B /* solarTabView.swift */,
+				8B1D17202671E701006E945B /* solarStatView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8B1D17262671EB2A006E945B /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				8B1D17272671EB5E006E945B /* Constants.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B1D17062671E5D4006E945B /* solarLogUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B1D17162671E5D7006E945B /* Build configuration list for PBXNativeTarget "solarLogUI" */;
+			buildPhases = (
+				8B1D17032671E5D4006E945B /* Sources */,
+				8B1D17042671E5D4006E945B /* Frameworks */,
+				8B1D17052671E5D4006E945B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = solarLogUI;
+			productName = solarLogUI;
+			productReference = 8B1D17072671E5D4006E945B /* solarLogUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B1D16FF2671E5D4006E945B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					8B1D17062671E5D4006E945B = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 8B1D17022671E5D4006E945B /* Build configuration list for PBXProject "solarLogUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B1D16FE2671E5D4006E945B;
+			productRefGroup = 8B1D17082671E5D4006E945B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B1D17062671E5D4006E945B /* solarLogUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B1D17052671E5D4006E945B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B1D17122671E5D7006E945B /* Preview Assets.xcassets in Resources */,
+				8B1D170F2671E5D7006E945B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B1D17032671E5D4006E945B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B1D171F2671E6C5006E945B /* solarTabView.swift in Sources */,
+				8B1D17232671EAD0006E945B /* SolarData.swift in Sources */,
+				8B1D170B2671E5D4006E945B /* solarLogUIApp.swift in Sources */,
+				8B1D17252671EB00006E945B /* SolarDataModel.swift in Sources */,
+				8B1D17212671E701006E945B /* solarStatView.swift in Sources */,
+				8B1D17282671EB5E006E945B /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8B1D17142671E5D7006E945B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B1D17152671E5D7006E945B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B1D17172671E5D7006E945B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"solarLogUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 5A98CFBJ3J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = solarLogUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.preu.solarLogUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B1D17182671E5D7006E945B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"solarLogUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 5A98CFBJ3J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = solarLogUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.preu.solarLogUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B1D17022671E5D4006E945B /* Build configuration list for PBXProject "solarLogUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B1D17142671E5D7006E945B /* Debug */,
+				8B1D17152671E5D7006E945B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B1D17162671E5D7006E945B /* Build configuration list for PBXNativeTarget "solarLogUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B1D17172671E5D7006E945B /* Debug */,
+				8B1D17182671E5D7006E945B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B1D16FF2671E5D4006E945B /* Project object */;
+}
