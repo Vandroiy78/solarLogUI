@@ -56,6 +56,34 @@ struct solarStatView: View {
             .background(Color(.gray).opacity(0.2))
             .cornerRadius(10)
             
+            // Graph
+            GeometryReader { geo in
+                VStack(alignment: .leading, spacing: 0.0) {
+                    Text("Jetzt")
+                    HStack(spacing: 0.0) {
+                        
+                        let percentage = model.solarData.totalPower == 0 ? 0 : Double(model.solarData.pdc / model.solarData.totalPower)
+                        
+                        Rectangle()
+                            .frame(width: CGFloat(percentage) * geo.size.width , height: 20.0)
+                            .foregroundColor(.green).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                        Rectangle()
+                            .frame(height: 20.0)
+                            .foregroundColor(.red).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    }
+                    HStack {
+                        Text("0%")
+                        Spacer()
+                        Text("50%")
+                        Spacer()
+                        Text("100%")
+                    }
+                    .font(.footnote)
+                }
+                .padding()
+            }
+            
+            
             Button(action: {
                 model.updateData()
             }, label: {
@@ -86,7 +114,7 @@ struct solarStatView: View {
             let roundedNumber = (Double(number)/1000000.0 * 100).rounded() / 100
             myReturn = String("\(roundedNumber) M\(unit)")
         }
-
+        
         return myReturn
     }
     
