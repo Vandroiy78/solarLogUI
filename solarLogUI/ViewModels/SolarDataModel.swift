@@ -61,9 +61,11 @@ class SolarDataModel: ObservableObject {
                         
                         // Parse the JSON
                         let myDecodedData = try decoder.decode(Welcome.self, from: data!)
-                        print(Thread.isMainThread)
+
                         if let container = myDecodedData.the801 {
-                            self.solarData = container.the170
+                            DispatchQueue.main.async {
+                                self.solarData = container.the170
+                            }
                         }
                     }
                     
