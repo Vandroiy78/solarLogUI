@@ -10,6 +10,7 @@ import SwiftUI
 struct solarStatView: View {
     
     @EnvironmentObject var model:SolarDataModel
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         VStack {
@@ -55,34 +56,11 @@ struct solarStatView: View {
             .padding()
             .background(Color(.gray).opacity(0.2))
             .cornerRadius(10)
+            //.font(.custom("Courier", fixedSize: 24))
             
             // Graph
-            GeometryReader { geo in
-                VStack(alignment: .leading, spacing: 0.0) {
-                    Text("Jetzt")
-                    HStack(spacing: 0.0) {
-                        
-                        let percentage = model.solarData.totalPower == 0 ? 0 : Double(model.solarData.pdc / model.solarData.totalPower)
-                        
-                        Rectangle()
-                            .frame(width: CGFloat(percentage) * geo.size.width , height: 20.0)
-                            .foregroundColor(.green).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                        Rectangle()
-                            .frame(height: 20.0)
-                            .foregroundColor(.red).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                    }
-                    HStack {
-                        Text("0%")
-                        Spacer()
-                        Text("50%")
-                        Spacer()
-                        Text("100%")
-                    }
-                    .font(.footnote)
-                }
+            solarGaugeView(totalPower: model.solarData.totalPower, currentPower: model.solarData.pdc, title: "Jetzt:")
                 .padding()
-            }
-            
             
             Button(action: {
                 model.updateData()
@@ -96,6 +74,11 @@ struct solarStatView: View {
             Text("Daten von: \(model.solarData.lastUpdateTime) ")
                 .font(.footnote)
         }
+        .onChange(of: scenePhase, perform: { newPhase in
+            if newPhase == .active {
+                model.updateData()
+            }
+        })
     }
     
     // converts a number to 'kilo' or 'mega' if applicable and displays it with the according unit (with k or M as prefix)

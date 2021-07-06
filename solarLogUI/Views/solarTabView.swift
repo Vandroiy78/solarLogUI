@@ -14,8 +14,13 @@ struct solarTabView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: "sun.max")
-                        Text("Stat")
+                        Text("Leistungsdaten")
                     }
+                }
+            solarSettingsView()
+                .tabItem {
+                    Image(systemName: "gearshape.2.fill")
+                    Text("Einstellungen")
                 }
         } .environmentObject(SolarDataModel())
     }
