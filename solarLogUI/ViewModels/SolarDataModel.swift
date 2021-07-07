@@ -14,7 +14,7 @@ class SolarDataModel: ObservableObject {
     init() {
         
         // Fetch Solar Data
-        getRemoteJsonFile()
+        updateData()
     }
     
     func updateData() {
@@ -36,9 +36,17 @@ class SolarDataModel: ObservableObject {
         // Get a URL Session object
         let session = URLSession.shared
         
+        // create http request and prepare headers
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // handle Basic Authentication
+        if Constants.Network.useBasicAuth {
+            let loginData = String(format: "%@:%@", Constants.Network.basic_auth_user, Constants.Network.basic_auth_password).data(using: String.Encoding.utf8)!
+            let base64LoginData = loginData.base64EncodedString()
+            request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+        }
         
         // Build the JSON query
         let jsonQuery: [String:Any] = ["801" : ["170" : nil]]
@@ -61,7 +69,7 @@ class SolarDataModel: ObservableObject {
                         
                         // Parse the JSON
                         let myDecodedData = try decoder.decode(Welcome.self, from: data!)
-
+                        
                         if let container = myDecodedData.the801 {
                             DispatchQueue.main.async {
                                 self.solarData = container.the170
@@ -74,28 +82,6 @@ class SolarDataModel: ObservableObject {
                     }
                 }
             }
-            
-            /*
-            let dataTask2 = session.dataTaskPublisher(for: request)
-                .map { $0.data
-                    
-                    
-                }
-                .decode(type: Welcome.self, decoder: JSONDecoder())
-                .receive(on: RunLoop.main)
-            
-            let cancellableSink = dataTask2
-                .sink(receiveCompletion: { completion in
-                        print(".sink() received the completion", String(describing: completion))
-                        switch completion {
-                            case .finished:
-                                break
-                            case .failure(let anError):
-                                print("received error: ", anError)
-                        }
-                }, receiveValue: { someValue in
-                    print(".sink() received \(someValue)")
-                })*/
             
             // Call resume on the data task
             dataTask.resume()

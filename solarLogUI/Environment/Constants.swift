@@ -10,6 +10,25 @@ import Foundation
 struct Constants {
     
     struct Network {
-        static let url = "http://10.0.1.6/getjp"
+        static let baseUrl = "power.preu.ch"
+        static let basic_auth_user = "holger"
+        static let basic_auth_password = "cqXs40me"
+        static let useBasicAuth = true
+        static let useEncryption = true
+        static let useCustomPort = true
+        static let customPort = "8524"
+        
+        
+        static var url:String {
+            var urlTmp:String
+            
+            urlTmp = "http"
+            urlTmp += useEncryption ? "s://" : "://"
+            urlTmp += baseUrl
+            urlTmp += useCustomPort ? ":" + customPort : ""
+            urlTmp += "/getjp"
+            
+            return urlTmp
+        }
     }
 }

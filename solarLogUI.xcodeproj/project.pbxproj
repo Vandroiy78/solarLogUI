@@ -17,6 +17,7 @@
 		8B1D17282671EB5E006E945B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D17272671EB5E006E945B /* Constants.swift */; };
 		8B227B10269430E000D021B8 /* solarSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B227B0F269430E000D021B8 /* solarSettingsView.swift */; };
 		8B227B122694376D00D021B8 /* solarGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B227B112694376D00D021B8 /* solarGaugeView.swift */; };
+		8B50BA292695797C0098447D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B50BA282695797C0098447D /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8B1D17272671EB5E006E945B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B227B0F269430E000D021B8 /* solarSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarSettingsView.swift; sourceTree = "<group>"; };
 		8B227B112694376D00D021B8 /* solarGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarGaugeView.swift; sourceTree = "<group>"; };
+		8B50BA282695797C0098447D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8B1D171A2671E624006E945B /* ViewModels */,
 				8B1D17192671E618006E945B /* Models */,
 				8B1D17262671EB2A006E945B /* Environment */,
+				8B50BA27269579640098447D /* Services */,
 				8B1D170E2671E5D7006E945B /* Assets.xcassets */,
 				8B1D17132671E5D7006E945B /* Info.plist */,
 				8B1D17102671E5D7006E945B /* Preview Content */,
@@ -117,6 +120,14 @@
 				8B1D17272671EB5E006E945B /* Constants.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		8B50BA27269579640098447D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B50BA282695797C0098447D /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B50BA292695797C0098447D /* DataService.swift in Sources */,
 				8B1D171F2671E6C5006E945B /* solarTabView.swift in Sources */,
 				8B1D17232671EAD0006E945B /* SolarData.swift in Sources */,
 				8B1D170B2671E5D4006E945B /* solarLogUIApp.swift in Sources */,
