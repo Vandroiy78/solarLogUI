@@ -12,93 +12,50 @@ struct solarStatView: View {
     @EnvironmentObject var model:SolarDataModel
     @Environment(\.scenePhase) var scenePhase
     
-    var body: some View {
-        VStack {
-            Text("SolarLog")
-                .font(.largeTitle)
-                .padding()
-            Text("Installiert: " + prettyPrint(model.solarData.totalPower, "W"))
-                .padding()
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Jetzt:")
-                    Text("Heute:")
-                    Text("Gestern:")
-                    Text("Monat:")
-                    Text("Jahr:")
-                    Text("Gesamt:")
-                }
-                VStack(alignment: .trailing) {
-                    Text(prettyPrint(model.solarData.pdc, "W"))
-                    Text(prettyPrint(model.solarData.yieldDay, "Wh"))
-                    Text(prettyPrint(model.solarData.yieldYesterday, "Wh"))
-                    Text(prettyPrint(model.solarData.yieldMonth, "Wh"))
-                    Text(prettyPrint(model.solarData.yieldYear, "Wh"))
-                    Text(prettyPrint(model.solarData.yieldTotal, "Wh"))
-                }
-                VStack(alignment: .trailing) {
-                    Text(prettyPrint(model.solarData.consPac, "W"))
-                    Text(prettyPrint(model.solarData.consYieldDay, "Wh"))
-                    Text(prettyPrint(model.solarData.consYieldYesterday, "Wh"))
-                    Text(prettyPrint(model.solarData.consYieldMonth, "Wh"))
-                    Text(prettyPrint(model.solarData.consYieldYear, "Wh"))
-                    Text(prettyPrint(model.solarData.consYieldTotal, "Wh"))
-                }
-                VStack(alignment: .trailing) {
-                    printBalance(yield: model.solarData.pdc, cons: model.solarData.consPac, unit: "W")
-                    printBalance(yield: model.solarData.yieldDay, cons: model.solarData.consYieldDay, unit: "Wh")
-                    printBalance(yield: model.solarData.yieldYesterday, cons: model.solarData.consYieldYesterday, unit: "Wh")
-                    printBalance(yield: model.solarData.yieldMonth, cons: model.solarData.consYieldMonth, unit: "Wh")
-                    printBalance(yield: model.solarData.yieldYear, cons: model.solarData.consYieldYear, unit: "Wh")
-                    printBalance(yield: model.solarData.yieldTotal, cons: model.solarData.consYieldTotal, unit: "Wh")
-                }
-            }
-            .padding()
-            .background(Color(.gray).opacity(0.2))
-            .cornerRadius(10)
-            //.font(.custom("Courier", fixedSize: 24))
-            
-            // Graph
-            solarGaugeView(totalPower: model.solarData.totalPower, currentPower: model.solarData.pdc, title: "Jetzt:")
-                .padding()
-            
-            Button(action: {
-                model.updateData()
-            }, label: {
-                HStack {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                    Text("Neu laden")
-                }
-            })
-            .padding()
-            Text("Daten von: \(model.solarData.lastUpdateTime) ")
-                .font(.footnote)
-        }
-        .onChange(of: scenePhase, perform: { newPhase in
-            if newPhase == .active {
-                model.updateData()
-            }
-        })
-    }
+    let myGreen = Color(.sRGB, red: 0, green: 0.7, blue: 0.2, opacity: 1.0)
     
-    // converts a number to 'kilo' or 'mega' if applicable and displays it with the according unit (with k or M as prefix)
-    func prettyPrint(_ number:Int, _ unit:String) -> String {
-        
-        var myReturn: String
-        
-        if abs(number) < 1000 {
-            myReturn = String("\(number) \(unit)")
+    var body: some View {
+        ScrollView {
+            VStack {
+                Text("SolarLog")
+                    .font(.largeTitle)
+                    .padding(.bottom, 0.25)
+                Text("Installiert: " + Utilities.prettyPrint(model.solarData.totalPower, "W"))
+                    .padding(.bottom, 0.25)
+                
+                // Yield
+                solarPowerInfoBox(powerNow: model.solarData.pdc, powerToday: model.solarData.yieldDay, powerYesterday: model.solarData.yieldYesterday, powerMonth: model.solarData.yieldMonth, powerYear: model.solarData.yieldYear, powerTotal: model.solarData.yieldTotal, boxTitle: "Produktion", dynamicColor: false, fixedColor: myGreen)
+                
+                // Consumption
+                solarPowerInfoBox(powerNow: model.solarData.consPac, powerToday: model.solarData.consYieldDay, powerYesterday: model.solarData.consYieldYesterday, powerMonth: model.solarData.consYieldMonth, powerYear: model.solarData.consYieldYear, powerTotal: model.solarData.consYieldTotal, boxTitle: "Verbrauch", dynamicColor: false, fixedColor: Color.red)
+                
+                // Balance
+                solarPowerInfoBox(powerNow: model.solarData.pdc - model.solarData.consPac, powerToday: model.solarData.yieldDay - model.solarData.consYieldDay, powerYesterday: model.solarData.yieldYesterday - model.solarData.consYieldYesterday, powerMonth: model.solarData.yieldMonth - model.solarData.consYieldMonth, powerYear: model.solarData.yieldYear - model.solarData.consYieldYear, powerTotal: model.solarData.yieldTotal - model.solarData.consYieldTotal, boxTitle: "Bilanz", dynamicColor: false, fixedColor: Color.blue)
+                
+                
+                // Graph
+                solarGaugeView(totalPower: model.solarData.totalPower, currentPower: model.solarData.pdc, title: "Jetzt:")
+                    .padding()
+                
+                Button(action: {
+                    model.updateData()
+                }, label: {
+                    HStack {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                        Text("Neu laden")
+                    }
+                })
+                .padding()
+                
+                Text("Daten von: \(model.solarData.lastUpdateTime) ")
+                    .font(.footnote)
+            }
+            .onChange(of: scenePhase, perform: { newPhase in
+                if newPhase == .active {
+                    model.updateData()
+                }
+        })
         }
-        else if abs(number) < 1000000 {
-            let roundedNumber = (Double(number)/1000.0 * 100).rounded() / 100
-            myReturn = String("\(roundedNumber) k\(unit)")
-        }
-        else {
-            let roundedNumber = (Double(number)/1000000.0 * 100).rounded() / 100
-            myReturn = String("\(roundedNumber) M\(unit)")
-        }
-        
-        return myReturn
     }
     
     // print the balance including unit
@@ -108,7 +65,7 @@ struct solarStatView: View {
         let myGreen = Color(.sRGB, red: 0, green: 0.7, blue: 0.2, opacity: 1.0)
         
         balance = yield - cons
-        return Text(prettyPrint(balance, unit))
+        return Text(Utilities.prettyPrint(balance, unit))
             .foregroundColor(balance >= 0 ? myGreen : .red)
     }
 }

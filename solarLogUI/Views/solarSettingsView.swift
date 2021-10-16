@@ -9,7 +9,9 @@ import SwiftUI
 
 struct solarSettingsView: View {
     
-    @State var serverUrl = Constants.Network.url
+    @EnvironmentObject var model:SolarDataModel
+    @State var serverUrl = ""
+    @State var serverPort = "80"
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,10 +19,28 @@ struct solarSettingsView: View {
                 .font(.largeTitle)
             HStack(alignment: .center) {
                 Text("solarLog URL:")
-                TextField("http://solarlog.myhome.com", text: $serverUrl)
+                TextField("solarlog.myhome.com", text: $serverUrl)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .onChange(of: serverUrl, perform: { value in
+                        model.updateBaseUrl(value: serverUrl)
+                        Utilities.saveSettings(value: serverUrl, key: "baseUrl")
+                    })
+            }
+            HStack(alignment: .center) {
+                Toggle(isOn: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, label: {
+                    Text("Encrypted")
+                })
+
+            }
+            HStack(alignment: .center) {
+                Text("Port:")
+                TextField("443", text: $serverPort)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             }
             Spacer()
+        }
+        .onAppear {
+            serverUrl = model.baseUrl
         }
         .padding()
     }

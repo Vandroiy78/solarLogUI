@@ -18,6 +18,8 @@
 		8B227B10269430E000D021B8 /* solarSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B227B0F269430E000D021B8 /* solarSettingsView.swift */; };
 		8B227B122694376D00D021B8 /* solarGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B227B112694376D00D021B8 /* solarGaugeView.swift */; };
 		8B50BA292695797C0098447D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B50BA282695797C0098447D /* DataService.swift */; };
+		8B83F385271AA3F700FFF7AF /* solarPowerInfoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83F384271AA3F700FFF7AF /* solarPowerInfoBox.swift */; };
+		8BE36A652695E3C900B3A982 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE36A642695E3C900B3A982 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		8B227B0F269430E000D021B8 /* solarSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarSettingsView.swift; sourceTree = "<group>"; };
 		8B227B112694376D00D021B8 /* solarGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarGaugeView.swift; sourceTree = "<group>"; };
 		8B50BA282695797C0098447D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		8B83F384271AA3F700FFF7AF /* solarPowerInfoBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solarPowerInfoBox.swift; sourceTree = "<group>"; };
+		8BE36A642695E3C900B3A982 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				8B1D17192671E618006E945B /* Models */,
 				8B1D17262671EB2A006E945B /* Environment */,
 				8B50BA27269579640098447D /* Services */,
+				8BE36A632695E3B000B3A982 /* Utilities */,
 				8B1D170E2671E5D7006E945B /* Assets.xcassets */,
 				8B1D17132671E5D7006E945B /* Info.plist */,
 				8B1D17102671E5D7006E945B /* Preview Content */,
@@ -110,6 +115,7 @@
 				8B1D17202671E701006E945B /* solarStatView.swift */,
 				8B227B0F269430E000D021B8 /* solarSettingsView.swift */,
 				8B227B112694376D00D021B8 /* solarGaugeView.swift */,
+				8B83F384271AA3F700FFF7AF /* solarPowerInfoBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +134,14 @@
 				8B50BA282695797C0098447D /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8BE36A632695E3B000B3A982 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8BE36A642695E3C900B3A982 /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +218,11 @@
 				8B1D17232671EAD0006E945B /* SolarData.swift in Sources */,
 				8B1D170B2671E5D4006E945B /* solarLogUIApp.swift in Sources */,
 				8B1D17252671EB00006E945B /* SolarDataModel.swift in Sources */,
+				8B83F385271AA3F700FFF7AF /* solarPowerInfoBox.swift in Sources */,
 				8B227B122694376D00D021B8 /* solarGaugeView.swift in Sources */,
 				8B227B10269430E000D021B8 /* solarSettingsView.swift in Sources */,
 				8B1D17212671E701006E945B /* solarStatView.swift in Sources */,
+				8BE36A652695E3C900B3A982 /* Utilities.swift in Sources */,
 				8B1D17282671EB5E006E945B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

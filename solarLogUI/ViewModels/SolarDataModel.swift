@@ -10,6 +10,7 @@ import Foundation
 class SolarDataModel: ObservableObject {
     
     @Published var solarData:SolarData = SolarData()
+    var baseUrl = Constants.Network.baseUrl
     
     init() {
         
@@ -19,6 +20,10 @@ class SolarDataModel: ObservableObject {
     
     func updateData() {
         getRemoteJsonFile()
+    }
+    
+    func updateBaseUrl(value:String) {
+        self.baseUrl = value
     }
     
     func getRemoteJsonFile() {

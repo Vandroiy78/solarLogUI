@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
     
     struct Network {
-        static let baseUrl = "power.preu.ch"
+        static let baseUrl = getBaseUrl()
         static let basic_auth_user = "holger"
         static let basic_auth_password = "cqXs40me"
         static let useBasicAuth = true
@@ -29,6 +29,16 @@ struct Constants {
             urlTmp += "/getjp"
             
             return urlTmp
+        }
+        
+        static func getBaseUrl() -> String {
+            
+            if let tmp = Utilities.retrieveSettings(key: "baseUrl") {
+                return tmp as! String
+            }
+            else {
+                return ""
+            }
         }
     }
 }
